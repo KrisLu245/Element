@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		
+		<div id="max" style="margin: auto;width: 600px;height: 500px;">
+			<div class="addstu_div">
+				<input type="text" id="stuname">
+				<button onclick="addstu()">添加学生</button>
+			</div>
+			<div class="stulist_div" id="stulist_div">
+
+				</ul>
+			</div>
+			<button onclick="delall()">删除所有学生</button>
+		</div>
+		
+		
+
+		<script>
+			var stuarr = ["张三", "李四", "王五"];
+			
+			window.onload = function() {
+				showUl();
+			}
+
+			function showUl() {
+				var ulobj = document.getElementById("stulist_div");
+				var ulhtml = '<ul style="line-height: 40px;" >';
+				for(var i = 0; i < stuarr.length; i++) {
+					ulhtml += "<li>";
+					ulhtml += stuarr[i];
+					ulhtml += "<button onclick=del('"+i+"')>删除</button>";
+					ulhtml += "</li>";
+				}
+				ulhtml += "</ul>";
+				ulobj.innerHTML = ulhtml;
+			}
+			
+			
+			// 新增学生
+			function addstu(){
+				//获取文本框的值，并且添加至数组内
+				stuarr.push(document.getElementById("stuname").value);
+				//重新产生页面数据
+				showUl();
+			}
+			
+			
+			// 删除学生
+			function del(index){
+				// splice方法参数说明:
+				//    参数一(index):得到删除时数组的下标,证明删此下标的值
+				//    参数二(1)：说明从此下标开始，删一个
+				stuarr.splice(index,1)  
+				//重新产生页面数据
+				showUl();
+			}
+			
+			
+			// 删除全部学生
+			function delall(){
+				// 使数组的数据清空
+				stuarr = [];
+				//重新产生页面数据
+				showUl();
+			}
+		</script>
+	</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box" style="width: 600px;height: 500px;margin: auto;text-align: center;margin-top: 50px;">
+			<li style="list-style: none;margin: 20px 0;">
+				<input />
+				<button onclick="tj()">添加学生</button>
+			</li>
+			<li id="l0">
+				张三
+				<button onclick="s1()">删除</button>
+			</li>
+			<li id="l1">
+				李四
+				<button onclick="s2()">删除</button>
+			</li>
+			<li id="l2">
+				王五
+				<button onclick="s3()">删除</button>
+			</li>
+			<li id="l3" style="margin-left: 15px;display: none;">
+				王麻子
+				<button onclick="s4()">删除</button>
+			</li>
+			<li id="l4" style="list-style: none;margin: 20px;">
+				<button onclick="qb()">删除所有学生</button>
+			</li>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function tj(){
+			document.getElementById("l3").style.display="block";
+		}
+		function s1(){
+			document.getElementById("l0").style.display="none";
+		}
+		function s2(){
+			document.getElementById("l1").style.display="none";
+		}
+		function s3(){
+			document.getElementById("l2").style.display="none";
+		}
+		function s4(){
+			document.getElementById("l3").style.display="none";
+		}
+		function qb(){
+			document.getElementById("l0").style.display="none";
+			document.getElementById("l1").style.display="none";
+			document.getElementById("l2").style.display="none";
+			document.getElementById("l3").style.display="none";
+		}
+	</script>
+</html>
+ -->

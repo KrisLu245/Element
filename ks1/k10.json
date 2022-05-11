@@ -1,0 +1,22 @@
+[
+	{
+		"PakingZone":"A区车位",
+		"num":"23"
+	},
+	{
+		"PakingZone":"B区车位",
+		"num":"20"
+	},
+	{
+		"PakingZone":"C区车位",
+		"num":"17"
+	},
+	{
+		"PakingZone":"D区车位",
+		"num":"25"
+	},
+	{
+		"PakingZone":"E区车位",
+		"num":"15"
+	}
+]

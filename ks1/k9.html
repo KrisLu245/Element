@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		请选择你的男友类型：
+		<select  id="s1" onchange="o1()">
+			<option>小鲜肉</option>
+			<option>老鲜肉</option>
+		</select>
+		<select id="s11" >
+			<option>张若昀</option>
+			<option>黄子韬</option>
+			<option>童锦程</option>
+		</select>
+	</body>
+	<script type="text/javascript">
+		function o1(){
+			var d=document.getElementById("s1").value;
+			if(d=="小鲜肉"){
+				var s=document.getElementById("s11");
+				s.innerHTML="<option>张若昀</option><option>黄子韬</option><option>童锦程</option>"
+			}
+			if(d=="老鲜肉"){
+				var s=document.getElementById("s11");
+				s.innerHTML="<option>倪大红</option><option>成龙</option><option>吴京</option>"
+			}
+		}
+	</script>
+</html>
+
